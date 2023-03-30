@@ -1,0 +1,31 @@
+h1{
+    color: blue;
+    text-decoration: underline;
+    background-color: goldenrod;
+}
+
+h2{
+    color: plum;
+    font-weight: bold;
+    font-size: 25px;
+    border: 20px solid orange;
+}
+
+section{
+    width: 50%;
+    height: 200px;
+    background-color: gray;
+    border: 20px solid black;
+    color: white;
+}
+
+footer{
+    background-color: black;
+    border: 20px solid lightgreen;
+    font-size: 20px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+footer h3{
+    background: linear-gradient(to left, red, purple);
+}

@@ -1,0 +1,147 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header{
+    width: 100%;
+    height: 30px;
+    margin: 20px 0;
+}
+
+header nav ul{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+header nav ul li{
+    float: left;
+    width: max-content;
+    margin: 0 15px;
+}
+
+/* ====== */
+
+
+header + section{
+    width: 85%;
+    margin: 10px auto;
+}
+small{
+    display: block;
+}
+header + section h1, header + section p, header + section div, header + section small{
+    margin: 5px auto;
+    width: fit-content;
+}
+
+/* ======= */
+
+header + section + section{
+    width: 85%;
+    margin: 10px auto; 
+}
+
+header + section + section h2, header + section + section p{
+    margin: 5px auto;
+    width: fit-content;
+}
+
+/* ======= */
+
+header + section + section + section{
+    width: 85%;
+    margin: 10px auto; 
+}
+header + section + section + section > div{
+    float: left;
+    width: 50%;
+}
+
+header + section + section + section > div img{
+    display: block;
+}
+
+header + section + section + section > div div,
+header + section + section + section > div img,
+header + section + section + section > div h3,
+header + section + section + section > div p{
+    width: fit-content;
+    margin: 5px auto;
+}
+header + section + section + section + section{
+    clear: both;
+}
+
+/* ======= */
+
+header + section + section + section + section{
+    width: 85%;
+    margin: 10px auto;
+}
+
+header + section + section + section + section h3,
+header + section + section + section + section p,
+header + section + section + section + section div{
+    width: fit-content;
+    margin: 5px auto;
+}
+
+/* ====== */
+footer{
+    clear: both;
+    margin: 30px 0;
+}
+
+footer > section .social{
+    float: left;
+    margin-left: 15px;
+}
+footer > section .address{
+    float: right;
+    margin-right: 15px;
+}
+footer .end{
+    clear: both;
+    border-top: 3px solid black;
+    margin: 50px 15px;
+}
+footer .end h5{
+    float: left;
+}
+footer .end img{
+    float: right;
+}
+footer a{
+    width: 10px;
+    margin: 5px;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

@@ -1,0 +1,189 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+header{
+  width: 85%;
+  margin: 0 auto;
+}
+
+
+.source{
+  float: left;
+}
+
+.buttin{
+  float: right;
+}
+
+nav ul li{
+  float: left;
+}
+
+nav ul{
+  width: fit-content;
+  margin: 0 auto;
+}
+
+span{
+  display: block;
+  clear: both;
+}
+
+/* ====== */
+
+header + section section{
+  float: left;
+  width: 50%;
+  margin-top: 30px;
+}
+
+header + section + section{
+  clear: both;
+}
+
+section > div form,
+section > div a{
+  float: left;
+}
+section > p{
+  clear: both;
+}
+
+/* ====== */
+
+header + section + section{
+  width: 85%;
+  margin: 0 auto;
+}
+
+.features{
+  float: left;
+  width: 25%;
+}
+
+/* ======= */
+
+.goatMan h2,
+.goatMan p{
+  width: 50%;
+  margin: 10px 0px 10px 10px;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+@media only screen and (max-width: 600px){
+  .buttin,
+  nav{
+    display: none;
+  }
+
+  header{
+    width: 100%;
+  }
+
+  header .source{
+    display: block;
+    float: none;
+    width: fit-content;
+    margin: 10px auto;
+  }
+
+
+
+  /* ====== */
+
+  header + section section{
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    float: none;
+  }
+
+  section > div form,
+  section > div a{
+  float: none;
+  width: fit-content;
+  margin: 0 auto;
+  display: block;
+}
+
+  .features{
+    float: none;
+    margin: 15px auto;
+  }
+  .features img,
+  .features h3,
+  .features a{
+    width: fit-content;
+    margin: 0 auto;
+    float: none;
+    display: block;
+  }
+
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+
+
+  .phoneTablet,
+  section > span,
+  h1,
+  section > p{
+    float: none;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+
+  }
+
+  .goatMan{
+    width: 75%;
+    margin: 0 auto;
+  }
+  .goatMan h2,
+  .goatMan p{
+    width: fit-content;
+    margin: 0 auto;
+    float: none;
+  }
+
+  .dropDown{
+    display: block;
+    float: left;
+  }
+
+
+}

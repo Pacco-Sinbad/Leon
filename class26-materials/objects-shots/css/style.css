@@ -1,0 +1,37 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+html{
+  background-image: url(https://media.istockphoto.com/id/486829892/photo/empty-table-edge-in-a-pub-bar-defocused-background.jpg?s=612x612&w=0&k=20&c=oLWBBDIy4_TosSxGSHPTJtzLPn11DFsK-hgJUIjpMag=);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 2em;
+  color: wheat;
+}
+
+img{
+  display: block;
+  margin: 0 auto;
+  height: 400px;
+  width: auto;
+  border-radius: 3px;
+}
+h3{
+  color: wheat;
+  font-weight: 900;
+  font-size: 2em;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
