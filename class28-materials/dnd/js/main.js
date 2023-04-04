@@ -4,6 +4,7 @@
 document.querySelector('button').addEventListener('click', getFetch)
 
 function getFetch(){
+    document.querySelector('ul').innerHTML = ""
   const choice = document.querySelector('input').value.split(' ').join('-')
 //   console.log(choice)
   const url = `https://www.dnd5eapi.co/api/spells/${choice}/`
