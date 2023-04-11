@@ -6,3 +6,26 @@
 
 //Loops
 //You have joined an undeground pokemon leauge. In this league, trainers can use any number of pokemon. Print to the console "Pikachu I choose you" x times where x is the number of pokemon the trainer you are battling has in their party
+
+
+
+let bulbcandies = 11
+let catcandies = 6
+let weedcandies = 6
+let totalcandies = (bulbcandies + catcandies + weedcandies)
+let temp 
+let tempCel
+function convertToCelsius(temp){
+  tempCel =   (temp - 32) * 5/9
+}
+function canHeFight(){
+    if(tempCel <= 0){
+        alert('it is too cold for charmander to fight')
+    }
+}
+
+function iChooseYou (numOfPokemon){
+    for(i=0; i <= numOfPokemon; i++){
+        console.log('Pikachu I choose you!!!!!!!!!')
+    }
+}
