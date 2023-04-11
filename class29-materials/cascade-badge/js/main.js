@@ -9,3 +9,24 @@
 // [68, -1, 1, -7, 10, 10] => [-1, 10]
 
 //Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.Return your answer as a number.
+
+function revPartyOrder(arr){
+    console.log(arr.reverse());
+};
+
+function compAB(a,b){
+    let aTot = a.reduce((tot,x) => tot + Math.pow(x,2 ),0)
+    let bTot = b.reduce((tot,x) => tot + Math.pow(x,3 ),0)
+    if(aTot > bTot){
+        return true
+    }
+}
+
+function isAMultiple(arr){
+    return arr.filter((x, i) => x%i == 0)
+}
+
+function justAddItUp(arr){
+    return arr.reduce((tot,x) => tot + +x , 0)
+}
+
