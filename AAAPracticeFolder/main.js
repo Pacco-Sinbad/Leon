@@ -174,8 +174,9 @@
 //******************************************************************** */
 
 
-function positiveSum(arr) {
-    return arr.filter((x) => x > 0).reduce((total, current) => total + current, 0);
-}
+// function positiveSum(arr) {
+//     return arr.filter((x) => x > 0).reduce((total, current) => total + current, 0);
+// }
 
-console.log
+// console.log
+
