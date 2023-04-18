@@ -83,6 +83,25 @@ class Front extends Contractor{
 
     introduce(){
         super.introduce()
-        console.log(`I primarily focus on ${this._mainRole} `)
+        console.log(`I primarily focus on front end work dealing with ${this._mainRole} `)
     }
 }
+
+class Back extends Contractor{
+    constructor(name, role, position){
+        super(name);
+        super(role);
+        this._mainRole = position;
+    }
+
+    get postion(){
+        return this._mainRole
+    }
+
+    introduce(){
+        super.introduce()
+        console.log(`I primarily focus on back end work dealing with ${this._mainRole} `)
+    }
+}
+
+let machi = new Front ('Machi', 'FrontEnd', 'Design');
