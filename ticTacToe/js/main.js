@@ -2,11 +2,11 @@
 // each game should be a new object that is created when the new game button is pressed
 class GameSession{
     constructor(){
-    // this.numberOfGames = 0
-    // this.botWins = 0
-    // this.userWins = 0
+    this.numberOfGames = 0
+    this.botWins = 0
+    this.userWins = 0
     this.start = document.querySelector('#start')
-    this.start.addEventListener('click', this.resetWins)
+    this.start.addEventListener('click', _ => this.resetWins())
     };
     resetWins(){
         this.numberOfGames = 0
@@ -20,13 +20,13 @@ class GameSession{
         document.querySelector('#start').innerText = 'Reset Game Session'
     };
 };
-const localSession = new GameSession
+let localSession = new GameSession;
 
 
 class TicTacToe{
     constructor(){
         this.button = document.querySelector('#newgame')
-        this.button.addEventListener("click", this.newGame)
+        this.button.addEventListener("click", () => this.newGame())
     };
     newGame(){
         let gameTiles = document.querySelectorAll('td')
@@ -36,7 +36,7 @@ class TicTacToe{
     };
 };
 
-const game1 = new TicTacToe
+let game1 = new TicTacToe
 
 
 
