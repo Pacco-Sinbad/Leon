@@ -26,7 +26,7 @@ let localSession = new GameSession;
 class TicTacToe{
     constructor(){
         this.button = document.querySelector('#newgame')
-        this.button.addEventListener("click", () => this.newGame())
+        this.button.addEventListener("click", _ => this.newGame())
     };
     newGame(){
         let gameTiles = document.querySelectorAll('td')
