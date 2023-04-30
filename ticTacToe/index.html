@@ -8,7 +8,7 @@
 		
 		<title>tic tac toe</title>
 
-		<link rel="icon" type="image/x-icon" href="images/favicon.ico"><!--favicon-->
+		<!-- <link rel="icon" type="image/x-icon" href="images/favicon.ico">favicon -->
 
 		<!-- 		for adding a thumbnail      -->
 		<!--  Essential META Tags -->
@@ -26,15 +26,35 @@
 		<!-- end of thumbnail info -->
 
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="assets/reset.css">
+		<link rel="stylesheet" href="assets/style.css">
 
 		<!--Font Awesme Goes Here-->
 	</head>
 	<body>
 		<main>
-			
+			<h1>Welcome!</h1>
+			<h3>Press new game to start playing.</h3>
 		</main>
+		<button id="start">Start</button>
+		<button id="newgame">New Game</button>
+		<table>
+			<tr>
+				<td class="td" id="tl">xo</td>
+				<td class="td" id="tc">xo</td>
+				<td class="td" id="tr">x/o</td>
+			</tr>
+			<tr>
+				<td class="td" id="cl">x/o</td>
+				<td class="td" id="cc">x/o</td>
+				<td class="td" id="cr">x/o</td>
+			</tr>
+			<tr>
+				<td class="td" id="bl">x/o</td>
+				<td class="td" id="bc">x/o</td>
+				<td class="td" id="br">x/o</td>
+			</tr>
+		</table>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
