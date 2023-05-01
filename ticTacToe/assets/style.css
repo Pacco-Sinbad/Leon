@@ -30,6 +30,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 3rem;
   }
   h1{
     font-size: 7rem;
@@ -83,5 +84,11 @@
   /*******************************************/
   
   #newgame{
+    visibility: collapse;
+  }
+  #reset{
+    visibility: collapse;
+  }
+  .orderOfPlay{
     visibility: collapse;
   }

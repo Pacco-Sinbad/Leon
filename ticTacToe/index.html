@@ -34,14 +34,26 @@
 	<body>
 		<main>
 			<h1>Welcome!</h1>
-			<h3>Press new game to start playing.</h3>
+			<h3>Press start to begin playing.</h3>
 		</main>
-		<button id="start">Start</button>
-		<button id="newgame">New Game</button>
+		<section class="buttons">
+			<button id="start">Start</button>
+			<button id="reset">Reset Score</button>
+			<button id="newgame">New Game</button>
+		</section>
+		<section class="scores">
+			<span>Bot </span><span class="botscore">0</span><span> Player</span><span> 0</span>
+		</section>
+		<form class="orderOfPlay">
+			<fieldset>
+				<button id="first">First</button>
+				<button id="second">Second</button>
+			</fieldset>
+		</form>
 		<table>
 			<tr>
-				<td class="td" id="tl">xo</td>
-				<td class="td" id="tc">xo</td>
+				<td class="td" id="tl">x/o</td>
+				<td class="td" id="tc">x/o</td>
 				<td class="td" id="tr">x/o</td>
 			</tr>
 			<tr>
