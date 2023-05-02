@@ -1,4 +1,8 @@
-                                                           ////OBJECTS THE BASICS/////
+   ///////                    THE JAVASCRIPT LANGUAGE CHAPTER FROM JAVASCRIPT.INFO                     //////
+   
+   
+   
+                            ////OBJECTS THE BASICS/////
 
 ////OBJECTS////
 let user = {}
@@ -74,3 +78,9 @@ let menu = {
 
 
   ////OBJECT TO PRIMITIVE CONVERSION////
+
+
+
+
+                                                    ////DATA TYPES/////
+
