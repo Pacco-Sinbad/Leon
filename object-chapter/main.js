@@ -1,3 +1,6 @@
+                                                           ////OBJECTS THE BASICS/////
+
+////OBJECTS////
 let user = {}
 user.name = 'John'
 user.surname = 'Smith'
@@ -51,3 +54,23 @@ let menu = {
   multiplyNumeric(menu);
 
   // the proper conditional here would have been == 'number' which makes sense because %1 returns whether the keys value is an integer. floaated values would not work in this instance.
+
+  ////OBJECT REFERENCES AND COPYING////
+
+
+  ////GARBAGE COLLECTION/////
+
+
+  /////OBJECT MEHTODS, "THIS"////
+
+
+  ////CONSTRUCTOR, OPERATOR "NEW"////
+
+
+  ////OPTIONAL CHAINING '?'////
+
+
+  ////SYMBOL TYPE////
+
+
+  ////OBJECT TO PRIMITIVE CONVERSION////
