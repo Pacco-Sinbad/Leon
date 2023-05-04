@@ -378,11 +378,4 @@ let game1 = new TicTacToe
 let localSession = new GameSession;
 
 
-// document.querySelector("h1").addEventListener('click', colorchange);
-// function colorchange(){
-//     if(document.querySelector('h1').style.color == 'red'){
-//         document.querySelector('h1').style.color = 'black'
-//     }else document.querySelector('h1').style.color = 'red'   
-// }
-
 
