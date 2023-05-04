@@ -138,91 +138,115 @@ class TicTacToe{
 };
 
 let Bot = {
+    ran: 0,
     botTurn(){
     let tile
-    let ran = 0 
     console.log(game1.turnCount)
     if(game1.turnCount % 2 == 0){
             tile = Math.ceil(Math.random()*9)
             console.log(tile)///////////////////////////////
         }else alert('Your Turn')
+
     if(tile === 1){
             console.log("here1")/////////////////////////////
             if(document.querySelector('#tl').innerText == 'x/o'){
             document.querySelector('#tl').innerText = 'o'
             console.log('RAN')
-            this.turnCount++
-            ran++ 
-            }else console.log('didnt run')
+            game1.turnCount++
+            this.ran++
+            this.botCheck()
+            }else this.botCheck()
+            
     }else if(tile === 2){
             console.log("here2")/////////////////////////////
             if(document.querySelector('#tc').innerText == 'x/o'){
             document.querySelector('#tc').innerText = 'o'
             console.log('RAN')
-            this.turnCount++
-            ran++  
-            }else console.log('didnt run')
+            game1.turnCount++
+            this.ran++  
+            this.botCheck()
+            }else this.botCheck()
+            
     }else if(tile === 3){
             console.log("here3")/////////////////////////////
             if(document.querySelector('#tr').innerText == 'x/o'){
             document.querySelector('#tr').innerText = 'o'
             console.log('RAN')
-            this.turnCount++
-            ran++  
-            }else console.log('didnt run')
+            game1.turnCount++
+            this.ran++  
+            this.botCheck()
+            }else this.botCheck()
+            
     }else if(tile === 4){
             console.log("here4")/////////////////////////////
             if(document.querySelector('#cl').innerText == 'x/o'){
             document.querySelector('#cl').innerText = 'o'
             console.log('RAN')
-            this.turnCount++
-            ran++  
-            }else console.log('didnt run')
+            game1.turnCount++
+            this.ran++  
+            this.botCheck()
+            }else this.botCheck()
+            
     }else if(tile === 5){
             console.log("here5")/////////////////////////////
             if(document.querySelector('#cc').innerText == 'x/o'){
             document.querySelector('#cc').innerText = 'o'
             console.log('RAN')
-            this.turnCount++
-            ran++  
-            }else console.log('didnt run')
+            game1.turnCount++
+            this.ran++  
+            this.botCheck()
+            }else this.botCheck()
+            
     }else if(tile === 6){
             console.log("here6")/////////////////////////////
             if(document.querySelector('#cr').innerText == 'x/o'){
             document.querySelector('#cr').innerText = 'o'
             console.log('RAN')
-            this.turnCount++
-            ran++  
-            }else console.log('didnt run')
+            game1.turnCount++
+            this.ran++  
+            this.botCheck()
+            }else this.botCheck()
+            
     }else if(tile === 7){
             console.log("here7")/////////////////////////////
             if(document.querySelector('#bl').innerText == 'x/o'){
             document.querySelector('#bl').innerText = 'o'
             console.log('RAN')
-            this.turnCount++ 
-            ran++ 
-            }else console.log('didnt run')
+            game1.turnCount++ 
+            this.ran++ 
+            this.botCheck()
+            }else this.botCheck()
+            
     }else if(tile === 8){
             console.log("here8")/////////////////////////////
             if(document.querySelector('#bc').innerText == 'x/o'){
             document.querySelector('#bc').innerText = 'o'
             console.log('RAN')
-            this.turnCount++ 
-            ran++ 
-            }else console.log('didnt run')
+            game1.turnCount++ 
+            this.ran++ 
+            this.botCheck()
+            }else this.botCheck()
+            
     }else if(tile === 9){
             console.log("here9")/////////////////////////////
             if(document.querySelector('#br').innerText == 'x/o'){
             document.querySelector('#br').innerText = 'o'
             console.log('RAN')
-            this.turnCount++ 
-            ran++ 
-            }else console.log('didnt run')
+            game1.turnCount++ 
+            this.ran++ 
+            this.botCheck()
+            }else this.botCheck()
+           
     }
-    if(ran == 0){
-        this.botTurn
-    }else ran = 0
-}
+    
+},
+    botCheck(){
+        console.log(this.ran)
+        if(this.ran == 0){
+            console.log('didnt run')
+            this.botTurn()
+         }else this.ran = 0
+    }
         
 }   
 
