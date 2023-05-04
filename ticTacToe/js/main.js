@@ -14,19 +14,22 @@ class GameSession{
     startGame(){
         this.numberOfGames = 1
         this.botWins = 0
-        this.userWins = 0  
-        document.querySelector('#newgame').style.visibility = 'visible'
+        this.userWins = 0
+        // document.querySelector('#newgame').style.visibility = 'visible'
         document.querySelector('#reset').style.visibility = 'visible'
         document.querySelector('#start').style.visibility = 'collapse'
-        console.log(this.numberOfGames)
-        document.querySelector('.orderOfPlay').style.visibility = 'visible'
+        game1.newGame()
+        // document.querySelector('.orderOfPlay').style.visibility = 'visible' ////////////////////
     };
 
     resetGamesCount(){
         this.numberOfGames = 1
         this.botWins = 0
         this.userWins = 0
-        console.log(this.numberOfGames)
+        game1.newGame()
+        console.log("RESET SCORE")
+        document.querySelector('.userscore').innerText = localSession.userWins
+        document.querySelector('.botscore').innerText = localSession.botWins
     }
 };
 
@@ -34,7 +37,7 @@ class GameSession{
 
 class TicTacToe{
     constructor(){
-        this.turnCount = 2 /////////////////////////////////////////////
+        this.turnCount = 1 /////////////////////////////////////////////
 
         this.button = document.querySelector('#newgame')
         this.button.addEventListener("click", _ => this.newGame())
@@ -69,69 +72,82 @@ class TicTacToe{
     };
     newGame(){
         let gameTiles = document.querySelectorAll('td')
-        gameTiles.forEach((x)=> x.innerText = 'x/o')
+        gameTiles.forEach((x)=> x.innerText = '#')
         localSession.numberOfGames++
-        console.log(localSession.numberOfGames)
+        console.log('New Game')
+        if (localSession.numberOfGames % 2 == 0){
+            this.turnCount = 1
+        }else this.turnCount = 0///////////////// if breaking chagne back to 2
+        Bot.botCheck()
     };
     topLeft(){
-        if(document.querySelector('#tl').innerText == 'x/o'){
+        if(document.querySelector('#tl').innerText == '#'){
             document.querySelector('#tl').innerText = 'x'
             this.turnCount++ 
+            winningConditions.whoWon()
             }else alert('please choose another tile')   
     };
     topCenter(){
-        if(document.querySelector('#tc').innerText == 'x/o'){
+        if(document.querySelector('#tc').innerText == '#'){
             document.querySelector('#tc').innerText = 'x'
             this.turnCount++ 
+            winningConditions.whoWon()
             }else alert('please choose another tile')
 
     }
     topRight(){
-        if(document.querySelector('#tr').innerText == 'x/o'){
+        if(document.querySelector('#tr').innerText == '#'){
             document.querySelector('#tr').innerText = 'x'
             this.turnCount++ 
+            winningConditions.whoWon()
             }else alert('please choose another tile')
 
     }
     centerLeft(){
-        if(document.querySelector('#cl').innerText == 'x/o'){
+        if(document.querySelector('#cl').innerText == '#'){
             document.querySelector('#cl').innerText = 'x'
             this.turnCount++ 
+            winningConditions.whoWon()
             }else alert('please choose another tile')
 
     }
     centerCenter(){
-        if(document.querySelector('#cc').innerText == 'x/o'){
+        if(document.querySelector('#cc').innerText == '#'){
             document.querySelector('#cc').innerText = 'x'
             this.turnCount++ 
+            winningConditions.whoWon()
             }else alert('please choose another tile')
 
     }
     centerRight(){
-        if(document.querySelector('#cr').innerText == 'x/o'){
+        if(document.querySelector('#cr').innerText == '#'){
             document.querySelector('#cr').innerText = 'x'
             this.turnCount++ 
+            winningConditions.whoWon()
             }else alert('please choose another tile')
 
     }
     bottomLeft(){
-        if(document.querySelector('#bl').innerText == 'x/o'){
+        if(document.querySelector('#bl').innerText == '#'){
             document.querySelector('#bl').innerText = 'x'
             this.turnCount++ 
+            winningConditions.whoWon()
             }else alert('please choose another tile')
 
     }
     bottomCenter(){
-        if(document.querySelector('#bc').innerText == 'x/o'){
+        if(document.querySelector('#bc').innerText == '#'){
             document.querySelector('#bc').innerText = 'x'
             this.turnCount++ 
+            winningConditions.whoWon()
             }else alert('please choose another tile')
 
     }
     bottomRight(){
-        if(document.querySelector('#br').innerText == 'x/o'){
+        if(document.querySelector('#br').innerText == '#'){
             document.querySelector('#br').innerText = 'x'
             this.turnCount++ 
+            winningConditions.whoWon()
             }else alert('please choose another tile')
 
     }        
@@ -141,114 +157,195 @@ let Bot = {
     ran: 0,
     botTurn(){
     let tile
-    console.log(game1.turnCount)
+    console.log('Turn ' + game1.turnCount + ' BotTurn')
     if(game1.turnCount % 2 == 0){
+            if(game1.turnCount < 2){
+                alert('Bot Starts')
+            }
             tile = Math.ceil(Math.random()*9)
-            console.log(tile)///////////////////////////////
-        }else alert('Your Turn')
+            console.log(tile + 'BOT PICK')
+        }else alert('You Start')
 
     if(tile === 1){
-            console.log("here1")/////////////////////////////
-            if(document.querySelector('#tl').innerText == 'x/o'){
+            if(document.querySelector('#tl').innerText == '#'){
             document.querySelector('#tl').innerText = 'o'
-            console.log('RAN')
             game1.turnCount++
             this.ran++
-            this.botCheck()
-            }else this.botCheck()
+            winningConditions.whoWon()
+            }else this.botTurn()
             
     }else if(tile === 2){
-            console.log("here2")/////////////////////////////
-            if(document.querySelector('#tc').innerText == 'x/o'){
+            if(document.querySelector('#tc').innerText == '#'){
             document.querySelector('#tc').innerText = 'o'
-            console.log('RAN')
             game1.turnCount++
             this.ran++  
-            this.botCheck()
-            }else this.botCheck()
+            winningConditions.whoWon()
+            }else this.botTurn()
             
     }else if(tile === 3){
-            console.log("here3")/////////////////////////////
-            if(document.querySelector('#tr').innerText == 'x/o'){
+            if(document.querySelector('#tr').innerText == '#'){
             document.querySelector('#tr').innerText = 'o'
-            console.log('RAN')
             game1.turnCount++
             this.ran++  
-            this.botCheck()
-            }else this.botCheck()
+            winningConditions.whoWon()
+            }else this.botTurn()
             
     }else if(tile === 4){
-            console.log("here4")/////////////////////////////
-            if(document.querySelector('#cl').innerText == 'x/o'){
+            if(document.querySelector('#cl').innerText == '#'){
             document.querySelector('#cl').innerText = 'o'
-            console.log('RAN')
             game1.turnCount++
             this.ran++  
-            this.botCheck()
-            }else this.botCheck()
+            winningConditions.whoWon()
+            }else this.botTurn()
             
     }else if(tile === 5){
-            console.log("here5")/////////////////////////////
-            if(document.querySelector('#cc').innerText == 'x/o'){
+            if(document.querySelector('#cc').innerText == '#'){
             document.querySelector('#cc').innerText = 'o'
-            console.log('RAN')
             game1.turnCount++
             this.ran++  
-            this.botCheck()
-            }else this.botCheck()
+            winningConditions.whoWon()
+            }else this.botTurn()
             
     }else if(tile === 6){
-            console.log("here6")/////////////////////////////
-            if(document.querySelector('#cr').innerText == 'x/o'){
+            if(document.querySelector('#cr').innerText == '#'){
             document.querySelector('#cr').innerText = 'o'
-            console.log('RAN')
             game1.turnCount++
             this.ran++  
-            this.botCheck()
-            }else this.botCheck()
+            winningConditions.whoWon()
+            }else this.botTurn()
             
     }else if(tile === 7){
-            console.log("here7")/////////////////////////////
-            if(document.querySelector('#bl').innerText == 'x/o'){
+            if(document.querySelector('#bl').innerText == '#'){
             document.querySelector('#bl').innerText = 'o'
-            console.log('RAN')
             game1.turnCount++ 
             this.ran++ 
-            this.botCheck()
-            }else this.botCheck()
+            winningConditions.whoWon()
+            }else this.botTurn()
             
     }else if(tile === 8){
-            console.log("here8")/////////////////////////////
-            if(document.querySelector('#bc').innerText == 'x/o'){
+            if(document.querySelector('#bc').innerText == '#'){
             document.querySelector('#bc').innerText = 'o'
-            console.log('RAN')
             game1.turnCount++ 
             this.ran++ 
-            this.botCheck()
-            }else this.botCheck()
+            winningConditions.whoWon()
+            }else this.botTurn()
             
     }else if(tile === 9){
-            console.log("here9")/////////////////////////////
-            if(document.querySelector('#br').innerText == 'x/o'){
+            if(document.querySelector('#br').innerText == '#'){
             document.querySelector('#br').innerText = 'o'
-            console.log('RAN')
             game1.turnCount++ 
             this.ran++ 
-            this.botCheck()
-            }else this.botCheck()
+            winningConditions.whoWon()
+            }else this.botTurn()
            
     }
     
 },
     botCheck(){
-        console.log(this.ran)
-        if(this.ran == 0){
-            console.log('didnt run')
+        console.log('Bot Check ' + ' ran' + this.ran + ' turn' + game1.turnCount)
+        if(game1.turnCount <= 10){
+        if(this.ran == 0){           
             this.botTurn()
          }else this.ran = 0
+        }
+        
     }
         
 }   
+
+let winningConditions = {
+    whoWon(){
+        if(document.querySelector('#tl').innerText == 'x' && document.querySelector('#tc').innerText == 'x' && document.querySelector('#tr').innerText == 'x' ){
+            alert('You Won')
+            game1.newGame()
+            this.userWin()
+            return
+        }else if(document.querySelector('#cl').innerText == 'x' && document.querySelector('#cc').innerText == 'x' && document.querySelector('#cr').innerText == 'x' ){
+            alert('You Won')
+            game1.newGame()
+            this.userWin()
+            return
+        }else if(document.querySelector('#bl').innerText == 'x' && document.querySelector('#bc').innerText == 'x' && document.querySelector('#br').innerText == 'x' ){
+            alert('You Won')
+            game1.newGame()
+            this.userWin()
+            return
+        }else if(document.querySelector('#tl').innerText == 'x' && document.querySelector('#cl').innerText == 'x' && document.querySelector('#bl').innerText == 'x' ){
+            alert('You Won')
+            game1.newGame()
+            this.userWin()
+            return
+        }else if(document.querySelector('#tc').innerText == 'x' && document.querySelector('#cc').innerText == 'x' && document.querySelector('#bc').innerText == 'x' ){
+            alert('You Won')
+            game1.newGame()
+            this.userWin()
+            return
+        }else if(document.querySelector('#tr').innerText == 'x' && document.querySelector('#cr').innerText == 'x' && document.querySelector('#br').innerText == 'x' ){
+            alert('You Won')
+            game1.newGame()
+            this.userWin()
+            return
+        }else if(document.querySelector('#tl').innerText == 'x' && document.querySelector('#cc').innerText == 'x' && document.querySelector('#br').innerText == 'x' ){
+            alert('You Won')
+            game1.newGame()
+            this.userWin()
+            return
+        }else if(document.querySelector('#tr').innerText == 'x' && document.querySelector('#cc').innerText == 'x' && document.querySelector('#bl').innerText == 'x' ){
+            alert('You Won')
+            game1.newGame()
+            this.userWin()
+            return
+        }else if(document.querySelector('#tl').innerText == 'o' && document.querySelector('#tc').innerText == 'o' && document.querySelector('#tr').innerText == 'o' ){
+            alert('Bot Won')
+            game1.newGame()
+            this.botWin()
+            return
+        }else if(document.querySelector('#cl').innerText == 'o' && document.querySelector('#cc').innerText == 'o' && document.querySelector('#cr').innerText == 'o' ){
+            alert('Bot Won')
+            game1.newGame()
+            this.botWin()
+            return
+        }else if(document.querySelector('#bl').innerText == 'o' && document.querySelector('#bc').innerText == 'o' && document.querySelector('#br').innerText == 'o' ){
+            alert('Bot Won')
+            game1.newGame()
+            this.botWin()
+            return
+        }else if(document.querySelector('#tl').innerText == 'o' && document.querySelector('#cl').innerText == 'o' && document.querySelector('#bl').innerText == 'o' ){
+            alert('Bot Won')
+            game1.newGame()
+            this.botWin()
+            return
+        }else if(document.querySelector('#tc').innerText == 'o' && document.querySelector('#cc').innerText == 'o' && document.querySelector('#bc').innerText == 'o' ){
+            alert('Bot Won')
+            game1.newGame()
+            this.botWin()
+            return
+        }else if(document.querySelector('#tr').innerText == 'o' && document.querySelector('#cr').innerText == 'o' && document.querySelector('#br').innerText == 'o' ){
+            alert('Bot Won')
+            game1.newGame()
+            this.botWin()
+            return
+        }else if(document.querySelector('#tl').innerText == 'o' && document.querySelector('#cc').innerText == 'o' && document.querySelector('#br').innerText == 'o' ){
+            alert('Bot Won')
+            game1.newGame()
+            this.botWin()
+            return
+        }else if(document.querySelector('#tr').innerText == 'o' && document.querySelector('#cc').innerText == 'o' && document.querySelector('#bl').innerText == 'o' ){
+            alert('Bot Won')
+            game1.newGame()
+            this.botWin()
+            return
+        }else Bot.botCheck()
+    },
+    userWin(){
+        localSession.userWins += 1
+        document.querySelector('.userscore').innerText = localSession.userWins
+    },
+    botWin(){
+        localSession.botWins += 1
+        document.querySelector('.botscore').innerText = localSession.botWins
+    }
+}
 
 let game1 = new TicTacToe
 
