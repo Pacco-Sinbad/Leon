@@ -2,7 +2,7 @@
 // each game should be a new object that is created when the new game button is pressed
 class GameSession{
     constructor(){
-    this.numberOfGames = 1
+    this.numberOfGames = 0
     this.botWins = 0
     this.userWins = 0
     this.start = document.querySelector('#start')
@@ -85,6 +85,8 @@ class TicTacToe{
             document.querySelector('#tl').innerText = 'x'
             this.turnCount++ 
             winningConditions.whoWon()
+            }else if(document.querySelector('#tl').innerText == 'x/o'){
+                alert('Press start')
             }else alert('please choose another tile')   
     };
     topCenter(){
@@ -92,7 +94,9 @@ class TicTacToe{
             document.querySelector('#tc').innerText = 'x'
             this.turnCount++ 
             winningConditions.whoWon()
-            }else alert('please choose another tile')
+        }else if(document.querySelector('#tc').innerText == 'x/o'){
+            alert('Press start')
+        }else alert('please choose another tile')
 
     }
     topRight(){
@@ -100,7 +104,9 @@ class TicTacToe{
             document.querySelector('#tr').innerText = 'x'
             this.turnCount++ 
             winningConditions.whoWon()
-            }else alert('please choose another tile')
+        }else if(document.querySelector('#tr').innerText == 'x/o'){
+            alert('Press start')
+        }else alert('please choose another tile')
 
     }
     centerLeft(){
@@ -108,7 +114,9 @@ class TicTacToe{
             document.querySelector('#cl').innerText = 'x'
             this.turnCount++ 
             winningConditions.whoWon()
-            }else alert('please choose another tile')
+        }else if(document.querySelector('#cl').innerText == 'x/o'){
+            alert('Press start')
+        }else alert('please choose another tile')
 
     }
     centerCenter(){
@@ -116,7 +124,9 @@ class TicTacToe{
             document.querySelector('#cc').innerText = 'x'
             this.turnCount++ 
             winningConditions.whoWon()
-            }else alert('please choose another tile')
+        }else if(document.querySelector('#cc').innerText == 'x/o'){
+            alert('Press start')
+        }else alert('please choose another tile')
 
     }
     centerRight(){
@@ -124,7 +134,9 @@ class TicTacToe{
             document.querySelector('#cr').innerText = 'x'
             this.turnCount++ 
             winningConditions.whoWon()
-            }else alert('please choose another tile')
+        }else if(document.querySelector('#cr').innerText == 'x/o'){
+            alert('Press start')
+        }else alert('please choose another tile')
 
     }
     bottomLeft(){
@@ -132,7 +144,9 @@ class TicTacToe{
             document.querySelector('#bl').innerText = 'x'
             this.turnCount++ 
             winningConditions.whoWon()
-            }else alert('please choose another tile')
+        }else if(document.querySelector('#bl').innerText == 'x/o'){
+            alert('Press start')
+        }else alert('please choose another tile')
 
     }
     bottomCenter(){
@@ -140,7 +154,9 @@ class TicTacToe{
             document.querySelector('#bc').innerText = 'x'
             this.turnCount++ 
             winningConditions.whoWon()
-            }else alert('please choose another tile')
+        }else if(document.querySelector('#bc').innerText == 'x/o'){
+            alert('Press start')
+        }else alert('please choose another tile')
 
     }
     bottomRight(){
@@ -148,7 +164,9 @@ class TicTacToe{
             document.querySelector('#br').innerText = 'x'
             this.turnCount++ 
             winningConditions.whoWon()
-            }else alert('please choose another tile')
+        }else if(document.querySelector('#br').innerText == 'x/o'){
+            alert('Press start')
+        }else alert('please choose another tile')
 
     }        
 };
@@ -335,6 +353,14 @@ let winningConditions = {
             game1.newGame()
             this.botWin()
             return
+        }else if (localSession.numberOfGames % 2 == 0 && game1.turnCount == 10){
+            alert('TIE')
+            game1.newGame()
+            return
+        }else if(localSession.numberOfGames % 2 != 0 && game1.turnCount == 9){  
+            alert('TIE')
+            game1.newGame()
+            return  
         }else Bot.botCheck()
     },
     userWin(){
