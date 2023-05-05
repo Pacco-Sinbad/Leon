@@ -1,0 +1,88 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Clear fix hack */
+  .clearfix:after {
+       content: ".";
+       display: block;
+       clear: both;
+       visibility: hidden;
+       line-height: 0;
+       height: 0;
+  }
+  
+  .clear {
+      clear: both;
+  }
+  
+  /******************************************
+  /* BASE STYLES
+  /*******************************************/
+  html{
+    font-size: 62.5%;
+  }
+ 
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 3rem;
+  }
+  h1{
+    font-size: 7rem;
+    }
+  h2, h3, h4{
+      font-size: 4rem;
+    }
+  main{
+      text-align: center;
+    }
+  table{
+    width: 70%;
+  }
+  td{
+    width: 33.3%;
+    height: 20rem;
+    border: 10px solid black;
+    text-align: center;
+    line-height: 20rem;
+    font-size: 15rem;
+  }
+  td:hover{
+    cursor: crosshair;
+    color: orangered;
+  }
+  #tl, #tc, #tr{
+    border-top: none;
+  }
+  #tl, #cl, #bl{
+    border-left: none;
+  }
+  #bl, #bc, #br{
+    border-bottom: none;
+  }
+  #tr, #cr, #br{
+    border-right: none;
+  }
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+ 
+  
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
+  #newgame{
+    visibility: collapse;
+  }
+  #reset{
+    visibility: collapse;
+  }
+  .orderOfPlay{
+    visibility: collapse;
+  }
