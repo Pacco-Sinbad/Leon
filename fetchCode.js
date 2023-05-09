@@ -18,3 +18,13 @@ fetch("https://dog.ceo/api/breeds/image/random")
 .catch(err => {
     console.log(`error ${err}`)
 });
+
+//Add A try Catch Block to the function below
+
+async function getACuteDogPhoto(){
+  const res = await fetch('')
+  const data = await res.json()
+  console.log(data)
+}
+
+getACuteDogPhoto()
