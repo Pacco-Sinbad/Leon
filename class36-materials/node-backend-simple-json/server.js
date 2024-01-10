@@ -4,6 +4,8 @@ const url = require('url');
 const querystring = require('querystring');
 const figlet = require('figlet')
 
+let site = ['/otherpage','/otherotherpage']
+
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
   const params = querystring.parse(url.parse(req.url).query);
@@ -15,20 +17,27 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-  else if (page == '/otherpage') {
-    fs.readFile('otherpage.html', function(err, data) {
+  else if(site.includes(page)) {
+    fs.readFile(`${page.substring(1)}.html` , function(err, data) {
       res.writeHead(200, {'Content-Type': 'text/html'});
       res.write(data);
       res.end();
     });
   }
-  else if (page == '/otherotherpage') {
-    fs.readFile('otherotherpage.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  }
+  // else if (page == '/otherpage') {
+  //   fs.readFile('otherpage.html', function(err, data) {
+  //     res.writeHead(200, {'Content-Type': 'text/html'});
+  //     res.write(data);
+  //     res.end();
+  //   });
+  // }
+  // else if (page == '/otherotherpage') {
+  //   fs.readFile('otherotherpage.html', function(err, data) {
+  //     res.writeHead(200, {'Content-Type': 'text/html'});
+  //     res.write(data);
+  //     res.end();
+  //   });
+  // }
   else if (page == '/api') {
     if('student' in params){
       if(params['student']== 'leon'){
