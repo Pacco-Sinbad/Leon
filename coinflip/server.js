@@ -7,7 +7,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
-MongoClient.connect('mongodb+srv://mfischerf92:pa8hp55s@flips.yaaxzjc.mongodb.net/?retryWrites=true&w=majority')
+MongoClient.connect
     .then(client => {
     console.log('Connected to Database')
     const db = client.db('CoinFlipper')
