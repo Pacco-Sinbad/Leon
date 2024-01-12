@@ -17,9 +17,10 @@
 
     <h2>Result!!!</h2>
     <ul class="flips">
-        <% for (let i = 0; i < Flips.length; i++) {%>
+        <% let FlipsRev = Flips.reverse() %>
+        <% for (let i = 0; i < FlipsRev.length; i++) {%>
             <li class="flip">
-                <span><%= Flips[i].side %></span>
+                <span><%= FlipsRev[i].side %></span>
             </li>
         <% } %>
     </ul>

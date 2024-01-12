@@ -27,13 +27,35 @@ MongoClient.connect('mongodb+srv://mfischerf92:pa8hp55s@flips.yaaxzjc.mongodb.ne
     })
    
     app.post('/flips', (req,res) => {
-            let result = Math.random()*100 > 50 ? 'heads':'tails';
+        let result = Math.random()*100 > 50 ? 'heads':'tails';
+       
             flipCollection
-                .insertOne({side: result, timestamp: new Date()})
-                .then(result =>{
-                    res.redirect('/')
+                .countDocuments()
+                .then(count => {
+                    if (count < 10) {
+                        flipCollection
+                        .insertOne({side: result, timestamp: new Date(),})
+                        .then(result =>{
+                            res.redirect('/')
+                        })
+                        .catch(error => console.error(error)) 
+                    } else{
+                        flipCollection
+                            .insertOne({side: result, timestamp: new Date(),})
+                            .then(
+                                flipCollection
+                                .deleteOne(
+                                    {},
+                                    {sort: {timestamp: 1}})//this sort functionality is part of mongodb. We can tell the database to sort based on ascending or descending order in this case by including 1 (ascending) or -1 (descending) as a value from the timestamp parameter.
+                            )
+                               
+                            .then(result =>{
+                                console.log('oldest flip replaced');
+                                res.redirect('/')
+                            })
+                            .catch(error=> console.error(error))
+                    }  
                 })
-                .catch(error => console.error(error))  
     })
 
     app.post('/clear_flips', (req,res) =>{
